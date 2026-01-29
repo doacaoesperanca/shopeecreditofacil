@@ -15,8 +15,6 @@
 
         .main-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
         .img-principal { width: 100%; height: auto; display: block; }
-        
-        /* Ajuste do Botão para funcionar o Loading */
         .btn-ajudar { 
             background-color: var(--primary-color); color: #fff; padding: 18px; 
             border-radius: 8px; font-weight: 700; width: 100%; border: none; 
@@ -84,9 +82,22 @@
                     <div class="tab-pane fade show active" id="sobre">
                         <div style="line-height: 1.6; color: #444;">
                             <p>💙🙏 <strong>"Theo tem apenas 8 anos e precisa de uma nova prótese para continuar caminhando"</strong></p>
-                            <p>Theo tem apenas 8 anos, mas já enfrentou batalhas que muitos adultos jamais imaginariam...</p>
+                            
+                            <p>Theo tem apenas 8 anos, mas já enfrentou batalhas que muitos adultos jamais imaginariam. Ele nasceu com uma má formação congênita e, aos 6 anos, precisou amputar as duas perninhas para continuar vivendo. Mesmo tão pequeno, Theo nunca perdeu o sorriso nem a vontade de seguir em frente.</p>
+
+                            <p>💪 <strong>Um menino que inspira</strong><br>
+                            Mesmo com todas as dificuldades, Theo ama praticar esporte e se tornou uma referência para outras crianças PCD. Quando Theo ganhou sua primeira prótese, foi um momento de felicidade imensa e um incentivo para se tornar quem ele é hoje.</p>
+
+                            <p>💔 <strong>O desafio agora</strong><br>
+                            Com o crescimento e a idade, as próteses do Theo já não encaixam mais em suas perninhas. Hoje, ele passa a maior parte do tempo cabisbaixo, por não conseguir mais realizar as atividades que fazia quando usava a prótese. Para uma criança, não poder brincar e se movimentar dói tanto quanto qualquer ferida física.</p>
+
                             <p>🎯 <strong>O que precisamos agora</strong><br>
                             Precisamos arrecadar R$ 40.000,00 para uma nova prótese para o Theo. Para nós, é apenas uma prótese. Para ele, é o mundo inteiro.</p>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="ajudou">
+                        <div id="lista-doadores">
+                            <p class="text-muted">Carregando doadores...</p>
                         </div>
                     </div>
                 </div>
@@ -106,7 +117,6 @@
                 </div>
                 
                 <button onclick="irParaPagamento(this)" class="btn-ajudar mb-3">Quero Ajudar</button>
-                
                 <p class="text-center text-muted small">Doe via PIX, Boleto ou Cartão</p>
             </div>
         </div>
@@ -122,17 +132,14 @@
 
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 <script>
-    // FUNÇÃO DE REDIRECIONAMENTO COM LOADING
     function irParaPagamento(elemento) {
         elemento.disabled = true;
         elemento.innerHTML = "⌛ Redirecionando para confirmação...";
-        
         setTimeout(function() {
             window.location.href = "https://livepix.gg/vaquinha/ajude-o-theo";
         }, 1200);
     }
 
-    // Notificação de doação simulada
     function showToast(msg) {
         const toast = document.createElement('div');
         toast.className = 'notificacao';
@@ -146,10 +153,7 @@
     }
     setTimeout(() => showToast("Ricardo M. doou R$ 100,00"), 5000);
 </script>
-
 </body></html>
-
-
 
 
 
