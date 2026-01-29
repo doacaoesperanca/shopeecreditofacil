@@ -1,125 +1,131 @@
-<!DOCTYPE html>
-<html lang="pt-br">
-<head>
+<!DOCTYPE html><html lang="pt-BR"><head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Interface de Estudo - Promoção</title>
+    <title>Uma perninha nova para o Theozinho</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-            background-color: #ee4d2d; /* Laranja característico */
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            color: white;
-            text-align: center;
-        }
+        :root { --primary-color: #24CA68; --text-color: #282828; }
+        body { font-family: 'Montserrat', sans-serif; background-color: #f9f9f9; color: var(--text-color); }
+        
+        /* Navbar Superior */
+        header { background: #fff; border-bottom: 2px solid #f1f0f0; padding: 10px 0; position: sticky; top: 0; z-index: 1020; }
+        .logo { font-weight: 700; font-size: 24px; color: var(--primary-color); text-decoration: none; }
 
-        .header {
-            margin-top: 20px;
-            margin-bottom: 20px;
+        /* Botão Flutuante Mobile (Novo) */
+        .btn-flutuante-mobile {
+            position: fixed; top: 70px; left: 0; right: 0; z-index: 1010;
+            padding: 10px; background: rgba(255,255,255,0.9);
+            display: none; border-bottom: 1px solid #ddd;
         }
+        @media (max-width: 991px) { .btn-flutuante-mobile { display: block; } }
 
-        .header img {
-            width: 120px;
+        .main-card { background: #fff; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.05); margin-bottom: 20px; }
+        .img-principal { width: 100%; height: auto; display: block; }
+        
+        /* Botão com Animação */
+        .btn-ajudar { 
+            background-color: var(--primary-color); color: #fff; padding: 18px; 
+            border-radius: 8px; font-weight: 700; width: 100%; border: none; 
+            display: block; text-align: center; text-decoration: none; font-size: 20px; 
+            transition: 0.3s; animation: pulse 2s infinite;
+            box-shadow: 0 4px 15px rgba(36, 202, 104, 0.4);
         }
-
-        .badge-info {
-            background-color: rgba(0, 0, 0, 0.2);
-            padding: 8px 20px;
-            border-radius: 20px;
-            font-size: 14px;
-            margin-bottom: 20px;
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.03); }
+            100% { transform: scale(1); }
         }
-
-        h1 {
-            font-size: 1.2rem;
-            max-width: 90%;
-            margin-bottom: 20px;
+        .btn-ajudar:hover { background-color: #1eb05a; color: #fff; transform: scale(1.05); }
+        
+        /* Notificação */
+        .notificacao {
+            position: fixed; bottom: 20px; left: 20px; background: #fff; padding: 10px 15px;
+            border-radius: 50px; box-shadow: 0 4px 15px rgba(0,0,0,0.1); display: flex;
+            align-items: center; z-index: 2000; transform: translateY(150%); transition: 0.4s;
         }
-
-        .btn-solicitar {
-            background-color: #267fff;
-            color: white;
-            border: none;
-            padding: 15px 30px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 1.1rem;
-            cursor: pointer;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            text-decoration: none;
-            margin-bottom: 30px;
-        }
-
-        .phone-container {
-            width: 280px;
-            margin-bottom: 20px;
-        }
-
-        .phone-container img {
-            width: 100%;
-            border-radius: 30px;
-        }
-
-        .footer-text {
-            font-size: 0.9rem;
-            margin-bottom: 30px;
-            opacity: 0.9;
-        }
-
-        .trust-badges {
-            width: 90%;
-            max-width: 400px;
-        }
-
-        .badge-item {
-            background-color: white;
-            color: #267fff;
-            padding: 10px;
-            border-radius: 5px;
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            font-size: 0.9rem;
-        }
-
-        .badge-item span {
-            margin-left: 8px;
-        }
+        .notificacao.show { transform: translateY(0); }
+        .avatar img { width: 35px; height: 35px; border-radius: 50%; margin-right: 10px; }
     </style>
 </head>
 <body>
 
-    <div class="header">
-        <strong>Shopee</strong>
+<div class="btn-flutuante-mobile">
+    <div class="container">
+        <a href="https://livepix.gg/vaquinha/ajude-o-theo" target="_blank" class="btn btn-success w-100 fw-bold">QUERO AJUDAR O THEO (PIX)</a>
     </div>
+</div>
 
-    <div class="badge-info">
-        🛡️ Sem consulta ao SPC/Serasa
+<header>
+    <div class="container d-flex justify-content-between align-items-center">
+        <a href="#" class="logo">vakinha</a>
+        <button class="btn btn-outline-success btn-sm fw-bold">Criar vaquinha</button>
     </div>
+</header>
 
-    <h1>Cartão Análise de Cartão - Shopee com limite pré-aprovado de até R$ 5.000 e zero anuidade!</h1>
-
-    <a href="#" class="btn-solicitar">QUERO SOLICITAR MEU CARTÃO!</a>
-
-    <div class="phone-container">
-        <div style="background: #fff; color: #000; padding: 50px 0; border-radius: 30px; border: 8px solid #333;">
-            [Mockup do App]
+<div class="container mt-4 mb-5">
+    <div class="text-center mb-4">
+        <span class="text-muted small fw-bold">URGENTE: META ATÉ DIA 30</span>
+        <h1 class="fw-bold">Uma perninha nova para o Theozinho</h1>
+        <div class="d-lg-none mt-3">
+            <a href="https://livepix.gg/vaquinha/ajude-o-theo" target="_blank" class="btn-ajudar">Quero Ajudar Agora</a>
         </div>
     </div>
 
-    <p class="footer-text">Processo 100% digital, sem burocracia e sem precisar sair de casa.</p>
+    <div class="row">
+        <div class="col-lg-8">
+            <div class="main-card">
+                <img src="images/wYgCCD9302404.png" alt="Theo" class="img-principal">
+                
+                <div class="p-4">
+                    <div style="line-height: 1.6; color: #444;">
+                        <h4 class="fw-bold text-success">💙 Ajude o Theo a voltar a andar</h4>
+                        <p>Theo tem 8 anos e precisa de uma nova prótese. As antigas não cabem mais e ele parou de brincar.</p>
+                        <a href="https://livepix.gg/vaquinha/ajude-o-theo" target="_blank" class="btn btn-outline-success w-100 mb-4 fw-bold">LER HISTÓRIA COMPLETA / DOAR</a>
+                        <hr>
+                        <p>Theo nasceu com uma má formação e amputou as perninhas aos 6 anos. Hoje, ele precisa de <strong>R$ 40.000,00</strong> para voltar a ter sua independência.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <div class="trust-badges">
-        <div class="badge-item">🛡️ <span>Site Seguro</span></div>
-        <div class="badge-item">🔒 <span>Dados Protegidos</span></div>
-        <div class="badge-item">👍 <span>Aprovação Garantida</span></div>
+        <div class="col-lg-4">
+            <div class="main-card p-4 sticky-top" style="top: 90px;">
+                <div class="text-muted small">Arrecadado</div>
+                <div class="text-success h2 fw-bold mb-0">R$ 29.148,56</div>
+                <div class="progress my-3" style="height: 12px;">
+                    <div class="progress-bar bg-success" style="width: 72%"></div>
+                </div>
+                <div class="d-flex justify-content-between small fw-bold mb-4">
+                    <span>72% da meta</span>
+                    <span class="text-muted">Meta R$ 40.000,00</span>
+                </div>
+                <a href="https://livepix.gg/vaquinha/ajude-o-theo" target="_blank" class="btn-ajudar mb-3">Quero Ajudar Agora</a>
+                <p class="text-center text-muted small">Aceita PIX, Boleto ou Cartão</p>
+                <div class="alert alert-warning small py-2 text-center fw-bold">
+                    ⚠️ Precisamos bater a meta até dia 30!
+                </div>
+            </div>
+        </div>
     </div>
+</div>
 
-</body>
-</html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script>
+    function showToast(msg) {
+        const toast = document.createElement('div');
+        toast.className = 'notificacao';
+        toast.innerHTML = `<div class="avatar"><img src="images/perfil.png" alt="User"></div><div class="content">${msg}</div>`;
+        document.body.appendChild(toast);
+        setTimeout(() => toast.classList.add('show'), 100);
+        setTimeout(() => {
+            toast.classList.remove('show');
+            setTimeout(() => toast.remove(), 300);
+        }, 3500);
+    }
+    // Simular doações para gerar confiança (Social Proof)
+    setTimeout(() => showToast("Mariana S. acabou de doar R$ 50,00"), 3000);
+    setTimeout(() => showToast("João P. acabou de doar R$ 25,00"), 8000);
+</script>
+
+</body></html>
